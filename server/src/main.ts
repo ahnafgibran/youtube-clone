@@ -9,6 +9,8 @@ import userRoute from './modules/user/user.route'
 import authRoute from './modules/auth/auth.route'
 import videoRoute from './modules/videos/video.route'
 import deserializeUser from './middleware/deserializeUser';
+import 'dotenv/config';
+
 
 const PORT = process.env.PORT || 4000;
 

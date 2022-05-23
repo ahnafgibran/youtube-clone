@@ -1,9 +1,11 @@
 import mongoose from "mongoose";
 import logger from "./logger";
 
-const DB_CONNECTION_STRING = process.env.DB_CONNECTION_STRING || "mongodb+srv://ahnaffg:aRnroDGoMmpKoHmP@youtube-clone-cluster.4hyn3.mongodb.net/test"
+const DB_CONNECTION_STRING = process.env.DB_CONNECTION_STRING || "mongodb://localhost:27017/video-app";
 
 export async function connectToDatabase(){
+    console.log('aaaaaaaaaa')
+    console.log(process.env.DB_CONNECTION_STRING)
     try {
         await mongoose.connect(DB_CONNECTION_STRING)
         logger.info("Connected to database")
