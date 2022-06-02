@@ -61,7 +61,6 @@ export async function updateVideoHandler(req: Request<UpdateVideoParams, {}, Upd
     const {videoId} = req.params
     const {title, description, published} = req.body
 
-    console.log(req.params, 'req.params')
 
     const {_id: userId} = res.locals.user
 
@@ -120,7 +119,7 @@ export async function streamVideoHandler(req: Request, res: Response){
         "Accept-Ranges": 'bytes',
         "Content-Length": contentLength,
         "Content-Type": `video/${video.extension}`,
-        // "Cross-Origin-Resource-Policy": 'cross-origin',
+        "Cross-Origin-Resource-Policy": 'cross-origin',
     }
 
     res.writeHead(StatusCodes.PARTIAL_CONTENT, headers)

@@ -6,8 +6,6 @@ import { createUser } from "./user.service"
 export async function registerUserHandler(req: Request<{}, {}, RegisterUserBody>, res: Response){
     const {username, email, password} = req.body
 
-    console.log(req.body)
-    
   
     try {
         await createUser({username, email, password})
